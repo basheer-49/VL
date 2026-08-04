@@ -30,7 +30,7 @@
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       border: none;
       cursor: pointer;
-      border-radius: 12px;
+      border-radius: 0;
     }
 
     .btn-primary:hover {
@@ -42,7 +42,7 @@
     .service-card {
       background: #ffffff;
       border: 1px solid rgba(58, 53, 81, 0.08);
-      border-radius: 16px;
+      border-radius: 0;
       transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
@@ -93,20 +93,27 @@
       transform: scale(1) translateY(0);
     }
 
-    input, select, textarea {
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    select,
+    textarea {
       border: 1.5px solid rgba(58, 53, 81, 0.15);
-      border-radius: 10px;
+      border-radius: 0;
       transition: all 0.2s ease;
       background-color: #ffffff;
     }
 
-    input:focus, select:focus, textarea:focus {
+    input:focus,
+    select:focus,
+    textarea:focus {
       outline: none;
       border-color: #3a3551;
       box-shadow: 0 0 0 4px rgba(58, 53, 81, 0.08);
     }
 
-    input::placeholder, textarea::placeholder {
+    input::placeholder,
+    textarea::placeholder {
       color: rgba(58, 53, 81, 0.4);
     }
 
@@ -122,159 +129,183 @@
       background: rgba(58, 53, 81, 0.2);
       border-radius: 3px;
     }
+
+    .checkbox-group label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border: 1.5px solid rgba(58, 53, 81, 0.15);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 0.9rem;
+    }
+
+    .checkbox-group label:hover {
+      border-color: #3a3551;
+      background: rgba(58, 53, 81, 0.03);
+    }
+
+    .checkbox-group input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: #3a3551;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
   </style>
 </head>
 <body>
 
   <!-- Logo -->
-  <div class="flex justify-center pt-12 pb-4">
-    <img src="https://raw.githubusercontent.com/basheer-49/VL/47046470f76d9bceac7ae99674e5ee30729ad9ec/visible-line/logo.svg" alt="Visible Line Logo" class="h-12 gs-reveal-down">
+  <div class="max-w-7xl mx-auto px-6 pt-8 pb-2">
+    <img src="https://raw.githubusercontent.com/basheer-49/VL/47046470f76d9bceac7ae99674e5ee30729ad9ec/visible-line/logo.svg" alt="Visible Line Logo" class="h-10 gs-reveal-down">
   </div>
 
   <!-- Hero Section -->
-  <section class="max-w-7xl mx-auto px-6 py-12 md:py-20 flex flex-col md:flex-row items-center gap-12 md:gap-20">
+  <section class="max-w-7xl mx-auto px-6 py-10 md:py-16 flex flex-col md:flex-row items-center gap-10 md:gap-16">
     <div class="w-full md:w-1/2 flex justify-center gs-reveal-left">
-      <img src="https://github.com/basheer-49/VL/blob/main/visible-line/man1.png?raw=true" alt="3D Character" class="w-full max-w-md h-auto">
+      <img src="https://github.com/basheer-49/VL/blob/main/visible-line/ChatGPT%20Image%204%20%D8%A3%D8%BA%D8%B3%D8%B7%D8%B3%202026%D8%8C%2011_53_11%20%D9%85.png?raw=true" alt="3D Character" class="w-full max-w-sm h-auto">
     </div>
     <div class="w-full md:w-1/2 text-center md:text-left gs-reveal-right">
-      <h1 class="text-5xl md:text-7xl font-bold text-[#3a3551] mb-4 tracking-tight">Visible Line</h1>
-      <p class="text-xl md:text-2xl text-[#3a3551] mb-10 font-light tracking-wide">Social Media Services</p>
-      <button type="button" id="btn-hero" class="btn-primary px-12 py-4 font-semibold text-lg">
+      <h1 class="text-5xl md:text-6xl font-bold text-[#3a3551] mb-3 tracking-tight">Visible Line</h1>
+      <p class="text-lg md:text-xl text-[#3a3551] mb-8 font-light tracking-wide">Social Media Services</p>
+      <button type="button" id="btn-hero" class="btn-primary px-10 py-3.5 font-semibold text-base">
         Join Now
       </button>
     </div>
   </section>
 
   <!-- Services Section -->
-  <section class="max-w-7xl mx-auto px-6 py-20 md:py-28">
-    <div class="text-center mb-16 md:mb-20 gs-reveal-up">
-      <h2 class="text-3xl md:text-5xl font-bold text-[#3a3551] section-title">Our Social Media Services</h2>
+  <section class="max-w-7xl mx-auto px-6 py-16 md:py-24">
+    <div class="text-center mb-12 md:mb-16 gs-reveal-up">
+      <h2 class="text-2xl md:text-4xl font-bold text-[#3a3551] section-title">Our Social Media Services</h2>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+    <div class="grid grid-cols-3 gap-3 md:gap-5">
 
-      <div class="service-card p-8 text-center gs-reveal-up">
-        <div class="w-14 h-14 mx-auto mb-5 rounded-full bg-[#3a3551] bg-opacity-10 flex items-center justify-center">
-          <svg class="w-7 h-7 text-[#3a3551]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+      <div class="service-card p-3 md:p-5 text-center gs-reveal-up">
+        <div class="w-10 h-10 md:w-12 md:h-12 mx-auto mb-3 bg-[#3a3551] bg-opacity-10 flex items-center justify-center">
+          <svg class="w-5 h-5 md:w-6 md:h-6 text-[#3a3551]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
         </div>
-        <h3 class="text-lg font-bold text-[#3a3551] mb-2">Content Marketing</h3>
-        <p class="text-sm text-[#3a3551] opacity-70 leading-relaxed">Innovative strategies that reach your audience</p>
+        <h3 class="text-xs md:text-base font-bold text-[#3a3551] mb-1">Content Marketing</h3>
+        <p class="text-[10px] md:text-xs text-[#3a3551] opacity-70 leading-relaxed">Innovative strategies that reach your audience</p>
       </div>
 
-      <div class="service-card p-8 text-center gs-reveal-up">
-        <div class="w-14 h-14 mx-auto mb-5 rounded-full bg-[#3a3551] bg-opacity-10 flex items-center justify-center">
-          <svg class="w-7 h-7 text-[#3a3551]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      <div class="service-card p-3 md:p-5 text-center gs-reveal-up">
+        <div class="w-10 h-10 md:w-12 md:h-12 mx-auto mb-3 bg-[#3a3551] bg-opacity-10 flex items-center justify-center">
+          <svg class="w-5 h-5 md:w-6 md:h-6 text-[#3a3551]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
         </div>
-        <h3 class="text-lg font-bold text-[#3a3551] mb-2">Content Sponsorship</h3>
-        <p class="text-sm text-[#3a3551] opacity-70 leading-relaxed">Integrated financing solutions</p>
+        <h3 class="text-xs md:text-base font-bold text-[#3a3551] mb-1">Content Sponsorship</h3>
+        <p class="text-[10px] md:text-xs text-[#3a3551] opacity-70 leading-relaxed">Integrated financing solutions</p>
       </div>
 
-      <div class="service-card p-8 text-center gs-reveal-up">
-        <div class="w-14 h-14 mx-auto mb-5 rounded-full bg-[#3a3551] bg-opacity-10 flex items-center justify-center">
-          <svg class="w-7 h-7 text-[#3a3551]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+      <div class="service-card p-3 md:p-5 text-center gs-reveal-up">
+        <div class="w-10 h-10 md:w-12 md:h-12 mx-auto mb-3 bg-[#3a3551] bg-opacity-10 flex items-center justify-center">
+          <svg class="w-5 h-5 md:w-6 md:h-6 text-[#3a3551]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
         </div>
-        <h3 class="text-lg font-bold text-[#3a3551] mb-2">Commercial Production</h3>
-        <p class="text-sm text-[#3a3551] opacity-70 leading-relaxed">Professional advertising content</p>
+        <h3 class="text-xs md:text-base font-bold text-[#3a3551] mb-1">Commercial Production</h3>
+        <p class="text-[10px] md:text-xs text-[#3a3551] opacity-70 leading-relaxed">Professional advertising content</p>
       </div>
 
-      <div class="service-card p-8 text-center gs-reveal-up">
-        <div class="w-14 h-14 mx-auto mb-5 rounded-full bg-[#3a3551] bg-opacity-10 flex items-center justify-center">
-          <svg class="w-7 h-7 text-[#3a3551]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+      <div class="service-card p-3 md:p-5 text-center gs-reveal-up">
+        <div class="w-10 h-10 md:w-12 md:h-12 mx-auto mb-3 bg-[#3a3551] bg-opacity-10 flex items-center justify-center">
+          <svg class="w-5 h-5 md:w-6 md:h-6 text-[#3a3551]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
         </div>
-        <h3 class="text-lg font-bold text-[#3a3551] mb-2">Photography</h3>
-        <p class="text-sm text-[#3a3551] opacity-70 leading-relaxed">Professional product photography</p>
+        <h3 class="text-xs md:text-base font-bold text-[#3a3551] mb-1">Photography</h3>
+        <p class="text-[10px] md:text-xs text-[#3a3551] opacity-70 leading-relaxed">Professional product photography</p>
       </div>
 
-      <div class="service-card p-8 text-center gs-reveal-up">
-        <div class="w-14 h-14 mx-auto mb-5 rounded-full bg-[#3a3551] bg-opacity-10 flex items-center justify-center">
-          <svg class="w-7 h-7 text-[#3a3551]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+      <div class="service-card p-3 md:p-5 text-center gs-reveal-up">
+        <div class="w-10 h-10 md:w-12 md:h-12 mx-auto mb-3 bg-[#3a3551] bg-opacity-10 flex items-center justify-center">
+          <svg class="w-5 h-5 md:w-6 md:h-6 text-[#3a3551]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
         </div>
-        <h3 class="text-lg font-bold text-[#3a3551] mb-2">Graphic Design</h3>
-        <p class="text-sm text-[#3a3551] opacity-70 leading-relaxed">Designs that reflect your identity</p>
+        <h3 class="text-xs md:text-base font-bold text-[#3a3551] mb-1">Graphic Design</h3>
+        <p class="text-[10px] md:text-xs text-[#3a3551] opacity-70 leading-relaxed">Designs that reflect your identity</p>
       </div>
 
-      <div class="service-card p-8 text-center gs-reveal-up">
-        <div class="w-14 h-14 mx-auto mb-5 rounded-full bg-[#3a3551] bg-opacity-10 flex items-center justify-center">
-          <svg class="w-7 h-7 text-[#3a3551]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+      <div class="service-card p-3 md:p-5 text-center gs-reveal-up">
+        <div class="w-10 h-10 md:w-12 md:h-12 mx-auto mb-3 bg-[#3a3551] bg-opacity-10 flex items-center justify-center">
+          <svg class="w-5 h-5 md:w-6 md:h-6 text-[#3a3551]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
         </div>
-        <h3 class="text-lg font-bold text-[#3a3551] mb-2">Web Design</h3>
-        <p class="text-sm text-[#3a3551] opacity-70 leading-relaxed">Website and app development</p>
+        <h3 class="text-xs md:text-base font-bold text-[#3a3551] mb-1">Web Design</h3>
+        <p class="text-[10px] md:text-xs text-[#3a3551] opacity-70 leading-relaxed">Website and app development</p>
       </div>
 
-      <div class="service-card p-8 text-center gs-reveal-up">
-        <div class="w-14 h-14 mx-auto mb-5 rounded-full bg-[#3a3551] bg-opacity-10 flex items-center justify-center">
-          <svg class="w-7 h-7 text-[#3a3551]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+      <div class="service-card p-3 md:p-5 text-center gs-reveal-up">
+        <div class="w-10 h-10 md:w-12 md:h-12 mx-auto mb-3 bg-[#3a3551] bg-opacity-10 flex items-center justify-center">
+          <svg class="w-5 h-5 md:w-6 md:h-6 text-[#3a3551]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
         </div>
-        <h3 class="text-lg font-bold text-[#3a3551] mb-2">Print Materials</h3>
-        <p class="text-sm text-[#3a3551] opacity-70 leading-relaxed">Design and print all types</p>
+        <h3 class="text-xs md:text-base font-bold text-[#3a3551] mb-1">Print Materials</h3>
+        <p class="text-[10px] md:text-xs text-[#3a3551] opacity-70 leading-relaxed">Design and print all types</p>
       </div>
 
-      <div class="service-card p-8 text-center gs-reveal-up">
-        <div class="w-14 h-14 mx-auto mb-5 rounded-full bg-[#3a3551] bg-opacity-10 flex items-center justify-center">
-          <svg class="w-7 h-7 text-[#3a3551]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+      <div class="service-card p-3 md:p-5 text-center gs-reveal-up">
+        <div class="w-10 h-10 md:w-12 md:h-12 mx-auto mb-3 bg-[#3a3551] bg-opacity-10 flex items-center justify-center">
+          <svg class="w-5 h-5 md:w-6 md:h-6 text-[#3a3551]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
         </div>
-        <h3 class="text-lg font-bold text-[#3a3551] mb-2">Market Study</h3>
-        <p class="text-sm text-[#3a3551] opacity-70 leading-relaxed">Analytics to understand the market</p>
+        <h3 class="text-xs md:text-base font-bold text-[#3a3551] mb-1">Market Study</h3>
+        <p class="text-[10px] md:text-xs text-[#3a3551] opacity-70 leading-relaxed">Analytics to understand the market</p>
       </div>
 
-      <div class="service-card p-8 text-center gs-reveal-up">
-        <div class="w-14 h-14 mx-auto mb-5 rounded-full bg-[#3a3551] bg-opacity-10 flex items-center justify-center">
-          <svg class="w-7 h-7 text-[#3a3551]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+      <div class="service-card p-3 md:p-5 text-center gs-reveal-up">
+        <div class="w-10 h-10 md:w-12 md:h-12 mx-auto mb-3 bg-[#3a3551] bg-opacity-10 flex items-center justify-center">
+          <svg class="w-5 h-5 md:w-6 md:h-6 text-[#3a3551]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
         </div>
-        <h3 class="text-lg font-bold text-[#3a3551] mb-2">Advertising Screens</h3>
-        <p class="text-sm text-[#3a3551] opacity-70 leading-relaxed">Indoor and outdoor screens</p>
+        <h3 class="text-xs md:text-base font-bold text-[#3a3551] mb-1">Advertising Screens</h3>
+        <p class="text-[10px] md:text-xs text-[#3a3551] opacity-70 leading-relaxed">Indoor and outdoor screens</p>
       </div>
 
-      <div class="service-card p-8 text-center gs-reveal-up">
-        <div class="w-14 h-14 mx-auto mb-5 rounded-full bg-[#3a3551] bg-opacity-10 flex items-center justify-center">
-          <svg class="w-7 h-7 text-[#3a3551]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+      <div class="service-card p-3 md:p-5 text-center gs-reveal-up">
+        <div class="w-10 h-10 md:w-12 md:h-12 mx-auto mb-3 bg-[#3a3551] bg-opacity-10 flex items-center justify-center">
+          <svg class="w-5 h-5 md:w-6 md:h-6 text-[#3a3551]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
         </div>
-        <h3 class="text-lg font-bold text-[#3a3551] mb-2">Video Editing</h3>
-        <p class="text-sm text-[#3a3551] opacity-70 leading-relaxed">Professional video editing</p>
+        <h3 class="text-xs md:text-base font-bold text-[#3a3551] mb-1">Video Editing</h3>
+        <p class="text-[10px] md:text-xs text-[#3a3551] opacity-70 leading-relaxed">Professional video editing</p>
       </div>
 
     </div>
   </section>
 
   <!-- Trust Section -->
-  <section class="max-w-5xl mx-auto px-6 py-20 md:py-28 text-center gs-reveal-up">
-    <div class="border-t border-b border-[#3a3551] border-opacity-15 py-16 md:py-20">
-      <p class="text-xl md:text-3xl text-[#3a3551] leading-relaxed md:leading-relaxed font-light">
+  <section class="max-w-5xl mx-auto px-6 py-16 md:py-24 text-center gs-reveal-up">
+    <div class="border-t border-b border-[#3a3551] border-opacity-15 py-14 md:py-18">
+      <p class="text-lg md:text-2xl text-[#3a3551] leading-relaxed md:leading-relaxed font-light">
         "We believe in the power of ideas and invest in our collective success together — every vision deserves to be seen, every brand deserves to shine, and every partnership we build is rooted in trust, creativity, and a shared commitment to turning ambitious goals into remarkable achievements that stand the test of time."
       </p>
     </div>
   </section>
 
   <!-- Bottom CTA -->
-  <section class="max-w-7xl mx-auto px-6 pb-20 md:pb-28 text-center gs-reveal-up">
-    <button type="button" id="btn-bottom" class="btn-primary px-16 py-5 font-semibold text-lg">
+  <section class="max-w-7xl mx-auto px-6 pb-16 md:pb-24 text-center gs-reveal-up">
+    <button type="button" id="btn-bottom" class="btn-primary px-14 py-4 font-semibold text-base">
       Join Now
     </button>
   </section>
 
   <!-- Modal -->
   <div id="modal" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4">
-    <div class="modal-content bg-white rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl">
-      <div class="p-8 md:p-10">
+    <div class="modal-content bg-white w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl" style="border-radius: 0;">
+      <div class="p-6 md:p-10">
 
         <div class="flex justify-between items-center mb-6">
-          <h2 class="text-2xl font-bold text-[#3a3551]">Cooperation Request Form</h2>
+          <h2 class="text-xl md:text-2xl font-bold text-[#3a3551]">Cooperation Request Form</h2>
           <button type="button" id="modal-close" class="text-[#3a3551] hover:opacity-60 transition-opacity p-1">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
           </button>
         </div>
 
-        <p class="text-[#3a3551] opacity-70 mb-8 text-sm">Thank you for your interest. Please fill out the form accurately, and we will respond as soon as possible.</p>
+        <p class="text-[#3a3551] opacity-70 mb-6 text-sm">Thank you for your interest. Please fill out the form accurately, and we will respond as soon as possible.</p>
 
-        <form id="coop-form" class="space-y-5">
+        <form id="coop-form" class="space-y-4">
 
           <div>
-            <label class="block text-sm font-semibold text-[#3a3551] mb-2">Full Name *</label>
+            <label class="block text-sm font-semibold text-[#3a3551] mb-1.5">Full Name *</label>
             <input type="text" name="full_name" placeholder="Enter your full name" class="w-full px-4 py-3 text-[#3a3551]" required>
           </div>
 
           <div>
-            <label class="block text-sm font-semibold text-[#3a3551] mb-2">Job Title *</label>
+            <label class="block text-sm font-semibold text-[#3a3551] mb-1.5">Job Title *</label>
             <select name="job_title" class="w-full px-4 py-3 text-[#3a3551] bg-white" required>
               <option value="">Select</option>
               <option>Manager</option>
@@ -285,12 +316,12 @@
           </div>
 
           <div>
-            <label class="block text-sm font-semibold text-[#3a3551] mb-2">Business Name *</label>
+            <label class="block text-sm font-semibold text-[#3a3551] mb-1.5">Business Name *</label>
             <input type="text" name="business_name" placeholder="Company name" class="w-full px-4 py-3 text-[#3a3551]" required>
           </div>
 
           <div>
-            <label class="block text-sm font-semibold text-[#3a3551] mb-2">Business Type *</label>
+            <label class="block text-sm font-semibold text-[#3a3551] mb-1.5">Business Type *</label>
             <select name="business_type" class="w-full px-4 py-3 text-[#3a3551] bg-white" required>
               <option value="">Select</option>
               <option>Retail</option>
@@ -303,36 +334,35 @@
           </div>
 
           <div>
-            <label class="block text-sm font-semibold text-[#3a3551] mb-2">Country / City *</label>
+            <label class="block text-sm font-semibold text-[#3a3551] mb-1.5">Country / City *</label>
             <input type="text" name="location" value="Jordan / Amman" class="w-full px-4 py-3 text-[#3a3551]" required>
           </div>
 
           <div>
-            <label class="block text-sm font-semibold text-[#3a3551] mb-2">Phone Number *</label>
+            <label class="block text-sm font-semibold text-[#3a3551] mb-1.5">Phone Number *</label>
             <input type="tel" name="phone" placeholder="+962" class="w-full px-4 py-3 text-[#3a3551]" required>
           </div>
 
           <div>
-            <label class="block text-sm font-semibold text-[#3a3551] mb-2">Email *</label>
+            <label class="block text-sm font-semibold text-[#3a3551] mb-1.5">Email *</label>
             <input type="email" name="email" placeholder="example@email.com" class="w-full px-4 py-3 text-[#3a3551]" required>
           </div>
 
           <div>
-            <label class="block text-sm font-semibold text-[#3a3551] mb-2">Required Services *</label>
-            <select name="services" class="w-full px-4 py-3 text-[#3a3551] bg-white" required>
-              <option value="">Select</option>
-              <option>Sponsored Ads</option>
-              <option>Account Management</option>
-              <option>Graphic Design</option>
-              <option>Brand Identity</option>
-              <option>Photography & Editing</option>
-              <option>Consulting</option>
-              <option>Other</option>
-            </select>
+            <label class="block text-sm font-semibold text-[#3a3551] mb-2">Required Services * <span class="font-normal opacity-60">(Select all that apply)</span></label>
+            <div class="checkbox-group grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <label><input type="checkbox" name="services[]" value="Sponsored Ads"> Sponsored Ads</label>
+              <label><input type="checkbox" name="services[]" value="Account Management"> Account Management</label>
+              <label><input type="checkbox" name="services[]" value="Graphic Design"> Graphic Design</label>
+              <label><input type="checkbox" name="services[]" value="Brand Identity"> Brand Identity</label>
+              <label><input type="checkbox" name="services[]" value="Photography & Editing"> Photography & Editing</label>
+              <label><input type="checkbox" name="services[]" value="Consulting"> Consulting</label>
+              <label><input type="checkbox" name="services[]" value="Other"> Other</label>
+            </div>
           </div>
 
           <div>
-            <label class="block text-sm font-semibold text-[#3a3551] mb-2">Social Media Accounts? *</label>
+            <label class="block text-sm font-semibold text-[#3a3551] mb-1.5">Social Media Accounts? *</label>
             <select name="has_accounts" class="w-full px-4 py-3 text-[#3a3551] bg-white" required>
               <option value="">Select</option>
               <option>Yes</option>
@@ -341,12 +371,12 @@
           </div>
 
           <div>
-            <label class="block text-sm font-semibold text-[#3a3551] mb-2">Approximate Followers</label>
+            <label class="block text-sm font-semibold text-[#3a3551] mb-1.5">Approximate Followers</label>
             <input type="text" name="followers" placeholder="Example: 5000" class="w-full px-4 py-3 text-[#3a3551]">
           </div>
 
           <div>
-            <label class="block text-sm font-semibold text-[#3a3551] mb-2">Worked with a marketing company before? *</label>
+            <label class="block text-sm font-semibold text-[#3a3551] mb-1.5">Worked with a marketing company before? *</label>
             <select name="previous_work" class="w-full px-4 py-3 text-[#3a3551] bg-white" required>
               <option value="">Select</option>
               <option>Yes</option>
@@ -355,28 +385,28 @@
           </div>
 
           <div>
-            <label class="block text-sm font-semibold text-[#3a3551] mb-2">Goal of Cooperation *</label>
+            <label class="block text-sm font-semibold text-[#3a3551] mb-1.5">Goal of Cooperation *</label>
             <textarea name="goal" rows="3" placeholder="Write your goal" class="w-full px-4 py-3 text-[#3a3551] resize-none" required></textarea>
           </div>
 
           <div>
-            <label class="block text-sm font-semibold text-[#3a3551] mb-2">Business Age</label>
+            <label class="block text-sm font-semibold text-[#3a3551] mb-1.5">Business Age</label>
             <input type="text" name="business_age" placeholder="Example: 3 years" class="w-full px-4 py-3 text-[#3a3551]">
           </div>
 
           <div>
-            <label class="block text-sm font-semibold text-[#3a3551] mb-2">Approximate Budget</label>
+            <label class="block text-sm font-semibold text-[#3a3551] mb-1.5">Approximate Budget</label>
             <input type="text" name="budget" placeholder="In Jordanian Dinar" class="w-full px-4 py-3 text-[#3a3551]">
           </div>
 
           <div>
-            <label class="block text-sm font-semibold text-[#3a3551] mb-2">Additional Notes</label>
+            <label class="block text-sm font-semibold text-[#3a3551] mb-1.5">Additional Notes</label>
             <textarea name="notes" rows="3" placeholder="Any additional details" class="w-full px-4 py-3 text-[#3a3551] resize-none"></textarea>
           </div>
 
-          <div class="flex flex-col sm:flex-row gap-4 pt-4">
+          <div class="flex flex-col sm:flex-row gap-3 pt-3">
             <button type="submit" class="btn-primary flex-1 py-3.5 font-semibold">Send Request</button>
-            <button type="button" id="btn-back" class="flex-1 py-3.5 font-semibold border-2 border-[#3a3551] text-[#3a3551] hover:bg-[#3a3551] hover:text-white transition-all duration-300 rounded-xl">Back to Home</button>
+            <button type="button" id="btn-back" class="flex-1 py-3.5 font-semibold border-2 border-[#3a3551] text-[#3a3551] hover:bg-[#3a3551] hover:text-white transition-all duration-300">Back to Home</button>
           </div>
 
         </form>
@@ -387,7 +417,6 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
 
-      // ---------- MODAL ----------
       var modal = document.getElementById('modal');
       var btnHero = document.getElementById('btn-hero');
       var btnBottom = document.getElementById('btn-bottom');
@@ -429,12 +458,18 @@
       if (form) {
         form.addEventListener('submit', function(e) {
           e.preventDefault();
+
+          var checkboxes = form.querySelectorAll('input[name="services[]"]:checked');
+          if (checkboxes.length === 0) {
+            alert('Please select at least one required service.');
+            return;
+          }
+
           closeModal();
           alert('Thank you! Your request has been sent.');
         });
       }
 
-      // ---------- GSAP ANIMATIONS ----------
       if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
         gsap.registerPlugin(ScrollTrigger);
 
